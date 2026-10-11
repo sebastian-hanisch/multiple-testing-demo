@@ -1,7 +1,6 @@
 # Viele Kennzahlen, viele Varianten: Mehrfachtests und Gewinnerfluch – Streamlit-Demo
 
-<!-- TODO nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-multiple-testing-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-multiple-testing-demo.streamlit.app/)**
 
 Interaktive Demo zum **gleichzeitigen Prüfen vieler Varianten**. **Fünftes Stück der Konzepte-Linie „Experimente und
 Wirkungsmessung“** im Portfolio von [Sebastian Hanisch](https://sebastianhanisch.net) (Operations Research und Machine
@@ -49,7 +48,7 @@ höchstens 0,9 Prozentpunkte; Gewinnerfluch 4 000 Wiederholungen).
 ## Befunde und Korrekturen gegenüber dem Plan
 
 - **Die Zahlen der Vorab-Messreihe auf dem Terminal-Gate** lagen darunter: dort 58,7 % statt 64,2 %, weil der Welch-Test auf den
-  schiefen Tagesmitteln im Schwanz konservativ war. Auf diesem Vehikel stimmt die Theorie (64,3 %).
+  schiefen Tagesmitteln im Tail konservativ war. Auf diesem Vehikel stimmt die Theorie (64,3 %).
 - **Holm gegen Bonferroni ist ein Randbefund** (0,3 Punkte), Benjamini-Hochberg der eigentliche Unterschied; im Plan stand
   „Holm/BH“ als gleichwertige Hälften.
 - **Benjamini-Hochberg hält die Fehlalarmrate nicht**, nur den Anteil falscher Entdeckungen: bei fünf echten Varianten gibt es in
@@ -136,4 +135,4 @@ Gebaut mit Streamlit, Plotly, NumPy und SciPy (Verteilungsfunktionen).
 
 ---
 
-Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zu den Demos: [Interaktive Demos](https://sebastianhanisch.net/demos.html).
+Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zur Reihe: [Experimente und Wirkungsmessung: A/B bis Logdaten](https://sebastianhanisch.net/konzepte-experimente-wirkungsmessung.html).
