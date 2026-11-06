@@ -47,12 +47,23 @@ st.title("🎰 Viele Kennzahlen, viele Varianten: Mehrfachtests und Gewinnerfluc
 st.markdown(
     """
 Wer **eine** Variante testet, akzeptiert 5 % Fehlalarm. Wer **zwanzig** testet, bekommt bei lauter wirkungslosen Varianten
-im Mittel einen Fehlalarm, und mit großer Wahrscheinlichkeit mindestens einen. Die Demo prüft m Varianten von Regel B
+im Mittel einen Fehlalarm, und in etwa 40 % der Experimente (gemeinsame Kontrolle) bis knapp zwei Drittel (unabhängige Tests) mindestens einen. Die Demo prüft m Varianten von Regel B
 gegen Regel A, von denen nur einige wirklich wirken, und misst für vier Vorgehensweisen, **wie oft sie falsch anschlagen**
 und **wie viele echte Effekte sie noch finden**. Dazu kommt der **Gewinnerfluch**: wer die *beste* von k Varianten kürt,
 überschätzt sie, selbst wenn alle gleich gut sind.
 """
 )
+
+# erklaerseite:einfach:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/multiple-testing-erklaert.json, nicht von Hand ändern)
+with st.expander("💬 In einfachen Worten"):
+    st.markdown(
+        """
+Stellen Sie sich vor, ein Händler probiert viele Abwandlungen einer Bestellregel aus und vergleicht jede mit der bisherigen Regel. Jeder einzelne Vergleich darf mit einem kleinen Risiko einen **Fehlalarm** melden. Bei vielen Vergleichen wächst die Chance, dass irgendeine wirkungslose Abwandlung auffällt. Die Demo zeigt, wie oft das passiert und wie **Bonferroni**, **Holm** und **Benjamini-Hochberg** dagegen helfen. Sie zeigt auch den Preis: Je strenger geprüft wird, desto mehr echte Verbesserungen gehen verloren. Dazu kommt der **Gewinnerfluch**: Wer die beste von vielen gleich guten Varianten auswählt, überschätzt sie, und die strengere Prüfung behebt diese Überschätzung nicht.
+
+[Ausführlich und verständlich erklärt, mit Fachteil](https://sebastianhanisch.net/multiple-testing-erklaert.html)
+        """
+    )
+# erklaerseite:einfach:end
 st.caption(
     "Fünftes Stück der Linie „Experimente und Wirkungsmessung“, aufbauend auf "
     "[ab-test-demo](https://sebastianhanisch-ab-test-demo.streamlit.app/) und "
@@ -219,6 +230,24 @@ st.caption(
 
 st.markdown("---")
 with st.expander("📐 Mathematische Formulierung"):
+    # erklaerseite:lesehilfe:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/multiple-testing-erklaert.json, nicht von Hand ändern)
+    st.markdown(
+        r"""
+**Lesehilfe.** Gegeben sind $m$ Varianten einer Regel, jede wird einzeln mit der bisherigen Regel A verglichen. Davon wirken $m_1$ wirklich, die übrigen $m_0$ nicht. Gesucht ist, wie oft ein Verfahren fälschlich eine Wirkung meldet, wie viele echte Wirkungen es findet und wie stark die beste Variante überschätzt wird.
+
+| Symbol | Bedeutung |
+|---|---|
+| $m$, $m_1$, $m_0$ | Zahl der Vergleiche, davon mit echter Wirkung, davon ohne ($m_0 = m - m_1$) |
+| $p_i$, $p_{(i)}$ | p-Wert des Vergleichs $i$ und der $i$-kleinste p-Wert |
+| $\alpha$ | Niveau: Fehlalarmrisiko eines einzelnen Tests |
+| $\Delta$, $\hat\Delta_j$ | wahre und gemessene Wirkung der Variante $j$ |
+| $\varepsilon_j$ | Zufallsabweichung der Messung der Variante $j$ |
+| $k$ | Zahl der gleich guten Varianten beim Gewinnerfluch |
+
+[Schritt für Schritt erklärt, mit Herleitung und Literatur](https://sebastianhanisch.net/multiple-testing-erklaert.html#fachleute)
+        """
+    )
+    # erklaerseite:lesehilfe:end
     st.markdown(
         r"""
 **Familienweise Fehlerrate.** Bei $m_0$ wirkungslosen Varianten und unabhängigen Tests zum Niveau $\alpha$ ist

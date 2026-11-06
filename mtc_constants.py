@@ -43,7 +43,7 @@ PRESETS = {
 PRESET_ORDER = tuple(PRESETS)
 PRESET_HELP = {
     "Zwanzig Vergleiche, zwei echte (Voreinstellung)": "20 Varianten gegen Regel A, 2 mit echter Wirkung (Sicherheitsfaktor 1,4), 30 Fenster je Arm, gemeinsame Kontrolle.",
-    "Zwanzig Vergleiche, kein echter Effekt": "Keine Variante wirkt: jede Meldung ist ein Fehlalarm; ohne Korrektur kommt fast immer mindestens einer.",
+    "Zwanzig Vergleiche, kein echter Effekt": "Keine Variante wirkt: jede Meldung ist ein Fehlalarm; ohne Korrektur kommt in etwa 40 % der Experimente mindestens einer (gemeinsame Kontrolle), bis zu knapp zwei Drittel bei unabhängigen Tests.",
     "Eigene Kontrolle je Vergleich": "Jeder Vergleich hat seine eigene Kontrollgruppe: die Tests sind unabhängig, die Fehlalarme addieren sich voll.",
     "Viele echte, kleine Effekte": "40 Varianten, 10 mit kleiner echter Wirkung (1,2): hier unterscheiden sich die Korrekturen in der Teststärke.",
 }
